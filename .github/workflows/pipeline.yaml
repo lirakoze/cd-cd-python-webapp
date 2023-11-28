@@ -3,6 +3,7 @@ name: pipeline
 on: [push]
 env:
   APPLICATION_NAME: mywebapp
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 jobs:
   lint:
     runs-on: ubuntu-latest
