@@ -31,6 +31,7 @@ jobs:
           version: '274.0.1'
           service_account_email: ${{secrets.GCP_SERVICE_ACCT_EMAIL}}
           service_account_key: ${{secrets.GCP_SERVICE_ACCT_KEY}}
+        
       - run: |
           gcloud config set project ${{secrets.GCP_PROJECT_ID}}
           gcloud config set run/region ${{secrets.GCP_REGION}}
