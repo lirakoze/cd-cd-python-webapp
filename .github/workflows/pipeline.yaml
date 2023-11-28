@@ -20,3 +20,23 @@ jobs:
     - name: RUNNING UNIT TESTS
       run: |
         python -m unittest --verbose --failfast
+
+  build-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: SETTING UP GOOGLE CLOUD
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: '274.0.1'
+          service_account_email: ${{secrets.GCP_SERVICE_ACCT_EMAIL}}
+          service_account_key: ${{secrets.GCP_SERVICE_ACCT_KEY}}
+      - run: |
+          gcloud config set project ${{secrets.GCP_PROJECT_ID}}
+          gcloud config set run/region ${{secrets.GCP_REGION}}
+          gcloud auth configure-docker
+          gcloud info
+      - name: BUILD AND TAG build-image
+        run: docker build -t "gcr.io/${{secrets.GCP_PROJECT_ID}}/${{env.APPLICATION_NAME}}:latest"
+      - name: PUBLISH TO GCP IMAGE REGISTRY
+        run: docker push gcr.io/${{secrets.GCP_PROJECT_ID}}/${{env.APPLICATION_NAME}}:latest
