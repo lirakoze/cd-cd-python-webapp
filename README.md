@@ -8,4 +8,3 @@ The below files are used:
 - Dockerfile for creating a container for the app
 - CI/CD pipeline triggered on push
 
-:D
