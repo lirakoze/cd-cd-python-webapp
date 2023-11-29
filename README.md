@@ -1,4 +1,4 @@
-#Build Status Badge: ![] (https://github.com/lirakoze/Ci-Cd-python-webapp/workflows/pipeline/badge.svg)
+#Build Status Badge: ![] (https://github.com/lirakoze/Ci-Cd-python-webapp/.github/workflows/pipeline/badge.svg)
 
 #Continuous Integration
 Demonstrating Continuous Integration with Github Actions
