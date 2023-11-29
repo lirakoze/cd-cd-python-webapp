@@ -1,6 +1,6 @@
-#Build Status Badge: ![] (https://github.com/lirakoze/Ci-Cd-python-webapp/.github/workflows/pipeline/badge.svg)
+# Build Status Badge: ![](https://github.com/lirakoze/Ci-Cd-python-webapp/.github/workflows/pipeline/badge.svg)
 
-#Continuous Integration
+# Continuous Integration
 Demonstrating Continuous Integration with Github Actions
 
 The below files are used:
