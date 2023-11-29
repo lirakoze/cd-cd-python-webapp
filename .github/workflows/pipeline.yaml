@@ -2,10 +2,10 @@ name: Pipeline
 
 on: [push]
 env:
-  APPLICATION_NAME: app2
+  APPLICATION_NAME: myapp
 jobs:
   lint:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Setup Python environment
@@ -22,7 +22,7 @@ jobs:
 
   build_image:
     needs: [lint]
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Set up GCloud
